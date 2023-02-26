@@ -7,12 +7,18 @@
 
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct QiitaSearcherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView(
+                store: Store(
+                    initialState: Search.State(),
+                    reducer: Search()._printChanges()
+                )
+            )
         }
     }
 }

@@ -14,6 +14,10 @@
 		37ED8D8429A9CA920044CA4B /* QiitaSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8D8329A9CA920044CA4B /* QiitaSearcherTests.swift */; };
 		37ED8D8E29A9CA920044CA4B /* QiitaSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8D8D29A9CA920044CA4B /* QiitaSearcherUITests.swift */; };
 		37ED8D9029A9CA920044CA4B /* QiitaSearcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8D8F29A9CA920044CA4B /* QiitaSearcherUITestsLaunchTests.swift */; };
+		37ED8D9E29A9CAEB0044CA4B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 37ED8D9D29A9CAEB0044CA4B /* ComposableArchitecture */; };
+		37ED8DA229A9CBAB0044CA4B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8DA129A9CBAA0044CA4B /* SearchView.swift */; };
+		37ED8DA429A9CBE20044CA4B /* ArticleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8DA329A9CBE20044CA4B /* ArticleItem.swift */; };
+		37ED8DA629A9CEAE0044CA4B /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED8DA529A9CEAE0044CA4B /* SearchClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		37ED8D8929A9CA920044CA4B /* QiitaSearcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaSearcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ED8D8D29A9CA920044CA4B /* QiitaSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaSearcherUITests.swift; sourceTree = "<group>"; };
 		37ED8D8F29A9CA920044CA4B /* QiitaSearcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaSearcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37ED8DA129A9CBAA0044CA4B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		37ED8DA329A9CBE20044CA4B /* ArticleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItem.swift; sourceTree = "<group>"; };
+		37ED8DA529A9CEAE0044CA4B /* SearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37ED8D9E29A9CAEB0044CA4B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +103,14 @@
 		37ED8D7029A9CA900044CA4B /* QiitaSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				37ED8DA029A9CB820044CA4B /* Models */,
+				37ED8D9F29A9CB770044CA4B /* Views */,
 				37ED8D7129A9CA900044CA4B /* QiitaSearcherApp.swift */,
 				37ED8D7329A9CA900044CA4B /* ContentView.swift */,
 				37ED8D7529A9CA920044CA4B /* Assets.xcassets */,
 				37ED8D7729A9CA920044CA4B /* QiitaSearcher.entitlements */,
 				37ED8D7829A9CA920044CA4B /* Preview Content */,
+				37ED8DA529A9CEAE0044CA4B /* SearchClient.swift */,
 			);
 			path = QiitaSearcher;
 			sourceTree = "<group>";
@@ -129,6 +140,22 @@
 			path = QiitaSearcherUITests;
 			sourceTree = "<group>";
 		};
+		37ED8D9F29A9CB770044CA4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37ED8DA129A9CBAA0044CA4B /* SearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37ED8DA029A9CB820044CA4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37ED8DA329A9CBE20044CA4B /* ArticleItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +172,9 @@
 			dependencies = (
 			);
 			name = QiitaSearcher;
+			packageProductDependencies = (
+				37ED8D9D29A9CAEB0044CA4B /* ComposableArchitecture */,
+			);
 			productName = QiitaSearcher;
 			productReference = 37ED8D6E29A9CA900044CA4B /* QiitaSearcher.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 37ED8D6529A9CA900044CA4B;
+			packageReferences = (
+				37ED8D9C29A9CAEB0044CA4B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 37ED8D6F29A9CA900044CA4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,7 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37ED8D7429A9CA900044CA4B /* ContentView.swift in Sources */,
+				37ED8DA229A9CBAB0044CA4B /* SearchView.swift in Sources */,
 				37ED8D7229A9CA900044CA4B /* QiitaSearcherApp.swift in Sources */,
+				37ED8DA429A9CBE20044CA4B /* ArticleItem.swift in Sources */,
+				37ED8DA629A9CEAE0044CA4B /* SearchClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37ED8D9C29A9CAEB0044CA4B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37ED8D9D29A9CAEB0044CA4B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37ED8D9C29A9CAEB0044CA4B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37ED8D6629A9CA900044CA4B /* Project object */;
 }
